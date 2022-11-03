@@ -8,9 +8,9 @@ const Playlist = (props) => {
     };
 
     return (
-        <div className='playlist' onClick={() => selectPlaylist(props.id)}>
-            <div className='image-wrapper'>
-                <img src={props.image} />
+        <div className="playlist" onClick={() => selectPlaylist(props.id)}>
+            <div className="image-wrapper">
+                <img src={props.image} alt="Album artwork" />
             </div>
             <h4>{props.name}</h4>
         </div>

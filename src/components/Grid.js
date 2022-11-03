@@ -8,6 +8,8 @@ const checkUniqueAlbum = (albums, albumArtStore) => {
         if (albumArtStore.includes(albumArtUrl) === false) {
             //unique album -- update list and collect its album art url
             albumArtStore.push(albumArtUrl);
+        } else {
+            return;
         }
     });
 };
@@ -21,20 +23,22 @@ const Grid = (props) => {
     const images = albumArtStore.map((albumUrl, index) => {
         if (index < maxImages) {
             return <Tile imageUrl={albumUrl} rows={square} key={albumUrl} />;
+        } else {
+            return;
         }
     });
 
     return (
         <div>
-            <a
-                className='back-btn'
+            <button
+                className="back-btn"
                 onClick={() => {
                     props.clearImages();
                 }}
             >
                 ← Go Back
-            </a>
-            <div className='grid'>{images}</div>
+            </button>
+            <div className="grid">{images}</div>
         </div>
     );
 };

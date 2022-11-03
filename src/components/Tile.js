@@ -8,7 +8,7 @@ const Tile = (props) => {
                 width: `calc(90vw / ${props.rows})`,
             }}
         >
-            <img src={props.imageUrl} />
+            <img src={props.imageUrl} alt="Album artwork" />
         </div>
     );
 };
