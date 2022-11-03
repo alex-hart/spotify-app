@@ -7,7 +7,7 @@ import logo from '../images/logo.png';
 
 const App = () => {
     const CLIENT_ID = '92a5c2f5232b41c3b8547c79cb8d12cd';
-    const REDIRECT_URI = 'http://localhost:3000';
+    const REDIRECT_URI = 'https://inquisitive-bunny-85771e.netlify.app/';
     const AUTH_ENDPOINT = 'https://accounts.spotify.com/authorize';
     const RESPONSE_TYPE = 'token';
     const [token, setToken] = useState('');
