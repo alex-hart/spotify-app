@@ -3,13 +3,11 @@ import Tile from './Tile';
 import './css/Grid.css';
 
 const checkUniqueAlbum = (albums, albumArtStore) => {
-    albums.map((song) => {
+    albums.forEach((song) => {
         const albumArtUrl = song.track.album.images[1].url;
         if (albumArtStore.includes(albumArtUrl) === false) {
             //unique album -- update list and collect its album art url
             albumArtStore.push(albumArtUrl);
-        } else {
-            return null;
         }
     });
 };
@@ -20,11 +18,9 @@ const Grid = (props) => {
     const albumArtStore = [];
     checkUniqueAlbum(props.playListImages, albumArtStore);
 
-    const images = albumArtStore.map((albumUrl, index) => {
+    const images = albumArtStore.forEach((albumUrl, index) => {
         if (index < maxImages) {
             return <Tile imageUrl={albumUrl} rows={square} key={albumUrl} />;
-        } else {
-            return null;
         }
     });
 
