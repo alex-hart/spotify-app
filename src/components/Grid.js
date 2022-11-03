@@ -10,6 +10,8 @@ const checkUniqueAlbum = (albums, albumArtStore) => {
             albumArtStore.push(albumArtUrl);
         }
     });
+
+    console.log(albumArtStore);
 };
 
 const Grid = (props) => {
@@ -18,10 +20,13 @@ const Grid = (props) => {
     const albumArtStore = [];
     checkUniqueAlbum(props.playListImages, albumArtStore);
 
-    const images = albumArtStore.forEach((albumUrl, index) => {
-        if (index < maxImages) {
-            return <Tile imageUrl={albumUrl} rows={square} key={albumUrl} />;
-        }
+    albumArtStore.splice(
+        albumArtStore.length - (albumArtStore.length - maxImages),
+        albumArtStore.length - maxImages
+    );
+
+    const images = albumArtStore.map((albumUrl) => {
+        return <Tile imageUrl={albumUrl} rows={square} key={albumUrl} />;
     });
 
     return (
