@@ -13,7 +13,7 @@
     border-radius: 500px;
     font-weight: 400;
     position: absolute;
-    bottom: 40px;
+    bottom: -80px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -38,4 +38,9 @@ body {
     align-items: center;
     position: relative;
     background: #1f1f1f;
+}
+
+.container {
+    margin-bottom: 160px;
+    position: relative;
 }
