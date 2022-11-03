@@ -9,7 +9,7 @@ const checkUniqueAlbum = (albums, albumArtStore) => {
             //unique album -- update list and collect its album art url
             albumArtStore.push(albumArtUrl);
         } else {
-            return;
+            return null;
         }
     });
 };
@@ -24,7 +24,7 @@ const Grid = (props) => {
         if (index < maxImages) {
             return <Tile imageUrl={albumUrl} rows={square} key={albumUrl} />;
         } else {
-            return;
+            return null;
         }
     });
 
